@@ -37,6 +37,7 @@ cargo build
 python3 -m venv venv
 source venv/bin/activate
 pip install pandas
+````
 
 ## Usage
 
@@ -44,6 +45,7 @@ pip install pandas
 
 ```bash
 cargo run
+```
 
 ## Contributing
 
@@ -58,4 +60,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 * The Axum framework team.
 * The developers of pandas.
 * The creators of GPT-40 mini.
-````
