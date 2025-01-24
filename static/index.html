@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimated Carbon Footprint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="select-ios invisible">
+        <!-- Generate the checkboxes with js for each phone it matches with -->
+        <!-- <input type="checkbox" id="Iphone" name="Iphone" value="Iphone">
+        <label for="Iphone"> Iphone 11</label>
+        <input type="checkbox" id="Iphone" name="Iphone" value="Iphone">
+        <label for="Iphone"> Iphone 12</label>
+        <input type="checkbox" id="Iphone" name="Iphone" value="Iphone">
+        <label for="Iphone"> Iphone 13</label> -->
+    </div>
+    <div class="details">
+        <h1 class="os"></h1>
+        <h1 class="name">
+            <input type="text" class="laptop_name invisible" placeholder="Laptop name">
+        </h1>
+        <h1 class="battery-capacity"></h1>
+        <h1 class="charge-frequency"></h1>
+    </div>
+    <div class="data-section">
+        <input class="dataNumber" type="number" placeholder="Data Usage (GB) per month e.g. 5"> <br>
+        <div class="wifiorcellular">
+            <input type="checkbox" id="wifi" name="wifi" value="wifi">
+            <label for="wifi"> Wifi</label>
+            <input type="checkbox" id="cellular" name="cellular" value="cellular">
+            <label for="cellular"> Cellular</label>
+        </div>
+    </div>
+    <h1 class="result"></h1>
+    <script src="script.js"></script>
+</body>
+</html>

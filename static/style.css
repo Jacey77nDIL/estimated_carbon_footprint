@@ -1,0 +1,167 @@
+/* General styling for body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #76c893, #52b69a, #34a0a4);
+    height: 100vh;
+    color: #fff;
+    overflow: hidden; /* Prevent unnecessary scrollbars */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+/* Ensure all elements respect box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Styling the select-ios section */
+.select-ios {
+    flex-direction: column;      /* Stack the checkboxes vertically */
+    justify-content: center;     /* Center the content vertically */
+    align-items: center;         /* Center the content horizontally */
+    margin: 0 auto;              /* Center the div horizontally within its container */
+    width: 60%;                  /* Set the width of the .select-ios container */
+    height: 300px;               /* Set a fixed height for the container */
+    padding: 10px;               /* Optional: Add some padding */
+    border: 1px solid #ccc;      /* Optional: Add a border for visualization */
+}
+
+
+/* Circular checkbox styling */
+.select-ios input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    text-align: center;
+}
+
+.select-ios input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #34a0a4;
+}
+
+.select-ios label {
+    margin-left: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Styling the details section */
+.details {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%; /* Prevent overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.details h1 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    word-wrap: break-word; /* Ensure long content doesn't overflow */
+}
+
+/* Data section styling */
+.data-section {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%; /* Prevent horizontal overflow */
+    padding: 0 20px; /* Add padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.data-section input[type="text"] {
+    padding: 10px 15px;
+    max-width: 400px; /* Limit input size */
+    width: 100%; /* Ensure it adjusts for smaller screens */
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.data-section input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.data-section .wifiorcellular {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.data-section input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+.data-section input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #34a0a4;
+}
+
+.data-section label {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Result font size */
+.result {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+/* Prevent horizontal overflow on small screens */
+html, body {
+    overflow-x: hidden; /* Ensure no horizontal scrollbars */
+}
+
+.invisible{
+    display: none;
+}
+.display{
+    display: block;
+}
+
+/* Styling for the laptop name input */
+.laptop_name {
+    padding: 10px 15px;
+    width: 100%;
+    border: 2px solid #34a0a4;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    text-align: center;
+    margin: 10px 0; /* Adjust spacing between elements */
+}
+
+.laptop_name::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
