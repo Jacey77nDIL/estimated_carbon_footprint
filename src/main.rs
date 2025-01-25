@@ -238,7 +238,7 @@ async fn process_samsung_devices(Json(mut data): Json<DeviceData>) -> (StatusCod
 }
 
 async fn get_device_battery(Json(data): Json<DeviceData>) -> (StatusCode, Json<String>) {
-    let mut rdr = match ReaderBuilder::new().has_headers(true).from_path("C:/Users/ikemn/Documents/PROGRAMMING/estimated_carbon_footprint/smartprix_final_manipulated.csv") {
+    let mut rdr = match ReaderBuilder::new().has_headers(true).from_path("smartprix_final_manipulated.csv") {
         Ok(rdr) => rdr,
         Err(_) => {
             return (
