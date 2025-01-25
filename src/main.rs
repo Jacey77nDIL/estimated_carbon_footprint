@@ -12,7 +12,7 @@ use std::collections::HashMap;
 use serde_json::json;
 use std::net::SocketAddr;
 use tower_http::cors::{Any, CorsLayer};
-use tower_http::cors::AllowOrigin;
+use http::header::HeaderValue;
 use reqwest::Client;
 use std::env;
 
@@ -323,7 +323,7 @@ async fn main() {
         .route("/get_battery_capacity_for_laptops", post(get_battery_capacity_for_laptops))
         .layer(
             CorsLayer::new()
-                .allow_origin(AllowOrigin::try_from("https://verdant-melba-b66cfd.netlify.app").unwrap()) // Allow requests from my site
+                .allow_origin(HeaderValue::from_static("https://verdant-melba-b66cfd.netlify.app")) // Allow requests from my site
                 .allow_methods(Any) // Allow any HTTP method
                 .allow_headers(Any), // Allow any headers
         );
