@@ -31,7 +31,7 @@ const deviceData = {
 if (beforeLast.includes('Android')) {
     userDevice = afterLast;
     deviceData.user_device = userDevice;
-    nameHeader.textContent = `Name: ${afterLast}`;
+    nameHeader.textContent = `Name: ${userAgent}`;
 } else if (isLaptop) {
     osHeader.textContent = `OS: ${beforeLast}`;
     laptopNameInput.classList.remove('invisible');
