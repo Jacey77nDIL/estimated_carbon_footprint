@@ -65,7 +65,7 @@ const mobileCarbonFootprintWithoutDataUsage = (batteryCapacity) => {
     const averageTeenWhUsage = 18;
     const chargeFrequency = batteryCapacityInWh / averageTeenWhUsage;
     const chargeEfficiency = 0.8; // energy losses of about 20%
-    const dailyEnergyConsumption = (batteryCapacity * (1 / chargeFrequency) / chargeEfficiency) / 1000;
+    const dailyEnergyConsumption = (batteryCapacityInWh * (1 / chargeFrequency) / chargeEfficiency) / 1000;
     const yearlyEnergyConsumption = dailyEnergyConsumption * 365;
     const carbonIntensityInNigeria = 0.5;
     const finalCarbonEmmision = yearlyEnergyConsumption * carbonIntensityInNigeria;
