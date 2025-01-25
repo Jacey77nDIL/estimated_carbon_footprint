@@ -64,8 +64,8 @@ const mobileCarbonFootprintWithoutDataUsage = (batteryCapacity) => {
     const batteryCapacityInWh = batteryCapacity * nominalPhoneVoltage / 1000;
     const averageTeenWhUsage = 18;
     const chargeFrequency = batteryCapacityInWh / averageTeenWhUsage;
-    const chargeEfficiency = 1.2; // energy losses of about 20%
-    const dailyEnergyConsumption = batteryCapacityInWh * chargeFrequency * chargeEfficiency;
+    const chargeEfficiency = 0.8; // energy losses of about 20%
+    const dailyEnergyConsumption = (batteryCapacity * (1 / chargeFrequency) / chargeEfficiency) / 1000;
     const yearlyEnergyConsumption = dailyEnergyConsumption * 365;
     const carbonIntensityInNigeria = 0.5;
     const finalCarbonEmmision = yearlyEnergyConsumption * carbonIntensityInNigeria;
@@ -78,8 +78,8 @@ const mobileCarbonFootprintWithoutDataUsage = (batteryCapacity) => {
 
 const laptopCarbonFootprintWithoutDataUsage = (batteryCapacity) => {
     const chargeFrequency = batteryCapacity / 50; // 50Wh normal daily usage
-    const chargeEfficiency = 1.2; // energy losses of about 20%
-    const dailyEnergyConsumption = batteryCapacity * chargeFrequency * chargeEfficiency;
+    const chargeEfficiency = 0.8; // energy losses of about 20%
+    const dailyEnergyConsumption = (batteryCapacity * (1 / chargeFrequency) / chargeEfficiency) / 1000;
     const yearlyEnergyConsumption = dailyEnergyConsumption * 365;
     const carbonIntensityInNigeria = 0.5;
     const finalCarbonEmmision = yearlyEnergyConsumption * carbonIntensityInNigeria;
@@ -112,7 +112,7 @@ cellularCheckbox.addEventListener('change', function() {
 
 // Function to send device data to the `/device` endpoint
 async function sendToBackend() {
-    const response = await fetch('http://localhost:3200/device', {
+    const response = await fetch('https://estimated-carbon-footprint.onrender.com/device', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ async function sendToBackend() {
 }
 
 async function sendSamsungDevices(deviceData) {
-    const response = await fetch('http://localhost:3200/samsung_devices', {
+    const response = await fetch('https://estimated-carbon-footprint.onrender.com/samsung_devices', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ async function sendSamsungDevices(deviceData) {
 
 // Function to send device data to the `/ios-options` endpoint
 async function sendIosOptions(deviceData) {
-    const response = await fetch('http://localhost:3200/ios-options', {
+    const response = await fetch('https://estimated-carbon-footprint.onrender.com/ios-options', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ async function sendIosOptions(deviceData) {
 }
 
 async function matchPhoneToBatteryCapacity(deviceData) {
-    const response = await fetch('http://localhost:3200/get_device_battery', {
+    const response = await fetch('https://estimated-carbon-footprint.onrender.com/get_device_battery', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -231,7 +231,7 @@ async function matchPhoneToBatteryCapacity(deviceData) {
 }
 
 async function sendLaptopBatteryCapacity(deviceData) {
-    const response = await fetch('http://localhost:3200/get_battery_capacity_for_laptops', {
+    const response = await fetch('https://estimated-carbon-footprint.onrender.com/get_battery_capacity_for_laptops', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
