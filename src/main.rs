@@ -322,7 +322,7 @@ async fn main() {
         .route("/get_battery_capacity_for_laptops", post(get_battery_capacity_for_laptops))
         .layer(
             CorsLayer::new()
-                .allow_origin(Any) // Allow requests from any origin
+                .allow_origin("https://verdant-melba-b66cfd.netlify.app") // Allow requests from my site
                 .allow_methods(Any) // Allow any HTTP method
                 .allow_headers(Any), // Allow any headers
         );
