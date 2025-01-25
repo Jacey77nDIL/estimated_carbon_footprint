@@ -327,8 +327,14 @@ async fn main() {
                 .allow_headers(Any), // Allow any headers
         );
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3200));
-    println!("Server running at http://{}", addr);
+    // Get the PORT from the environment variable, defaulting to 10000 if not set
+    let port = env::var("PORT")
+        .unwrap_or_else(|_| "10000".to_string())  // Default Render port
+        .parse::<u16>()
+        .expect("PORT must be a valid number");
+
+    // Bind to 0.0.0.0 to be accessible externally on Render
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
 
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
