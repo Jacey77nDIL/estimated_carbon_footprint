@@ -12,6 +12,7 @@ use std::collections::HashMap;
 use serde_json::json;
 use std::net::SocketAddr;
 use tower_http::cors::{Any, CorsLayer};
+use tower_http::cors::AllowOrigin;
 use reqwest::Client;
 use std::env;
 
