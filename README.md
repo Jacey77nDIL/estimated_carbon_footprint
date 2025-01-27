@@ -49,7 +49,7 @@ cargo run
 
 ## Contributing
 
-We welcome contributions! Please see our CONTRIBUTING.md for more details.
+We welcome contributions!
 
 ## License
 
